@@ -37,13 +37,39 @@ const tripsFindByCode = async (req, res) => {
                     .json(err);
             } else {
                 return res
-                    .status(200)
+                    .status(201)
                     .json(trip);
             }
         });
 };
 
+const tripsAddTrip = async (req, res) => {
+    Model
+        .create({
+            code: req.body.code,
+            name: req.body.name,
+            length: req.body.length,
+            start: req.body.start,
+            resort: req.body.resort,
+            perPerson: req.body.perPerson,
+            image: req.body.image,
+            description: req.body.description
+        },
+        (err, trip) => {
+            if (err) {
+                return res
+                    .status(400)    // bad request, invalid content
+                    .json(err);
+            } else {
+                return res
+                    .status(201)    // created
+                    .json(trip);
+            }
+        });
+}
+
 module.exports = {
     tripsList,
-    tripsFindByCode
+    tripsFindByCode,
+    tripsAddTrip
 };
