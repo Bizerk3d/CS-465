@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-// import { trips } from '../data/trips';
 import { TripDataService } from '../services/trip-data.service';
 import { Trip } from '../models/trip';
 import { AuthenticationService } from '../services/authentication.service';
@@ -13,14 +12,13 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class TripListingComponent implements OnInit {
 
-    // trips: Array<any> = trips;
     trips: Trip[];
 
     message: string;
 
     constructor(
         private tripDataService: TripDataService,
-        private authService: AuthenticationService,
+        private authenticationService: AuthenticationService,
         private router: Router
         ) { }
 
@@ -41,7 +39,7 @@ export class TripListingComponent implements OnInit {
     }
 
     public isLoggedIn(): boolean {
-        return this.authService.isLoggedIn();
+        return this.authenticationService.isLoggedIn();
     }
 
     ngOnInit(): void {

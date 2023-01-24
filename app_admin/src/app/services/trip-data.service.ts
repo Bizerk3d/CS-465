@@ -1,7 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
-
 import { Trip } from '../models/trip';
 import { User } from '../models/user';
 import { AuthResponse } from '../models/authresponse';
@@ -10,7 +8,6 @@ import { BROWSER_STORAGE } from '../storage';
 @Injectable()
 export class TripDataService {
 
-    // constructor(private http: HttpClient) { }
     constructor(private http: Http,
     @Inject(BROWSER_STORAGE) private storage: Storage
     ) { }
@@ -41,7 +38,7 @@ export class TripDataService {
         return this.http
             .get(this.tripUrl)
             .toPromise()
-            .then(response => response.json() as Trip[])    // take this out if using httpclient
+            .then(response => response.json() as Trip[])    
             .catch(this.handleError);
     }
 
@@ -51,7 +48,7 @@ export class TripDataService {
         return this.http
             .put(this.tripUrl + formData.code, formData)
             .toPromise()
-            .then(response => response.json() as Trip[])    // take this out if using httpclient
+            .then(response => response.json() as Trip[])    
             .catch(this.handleError);
     }
 
