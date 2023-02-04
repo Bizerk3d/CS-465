@@ -1,4 +1,4 @@
-**Travlr Getaways Application**
+**Travlr Getaways MEAN Full Stack Application**
 
 **_Architecture_**
 
