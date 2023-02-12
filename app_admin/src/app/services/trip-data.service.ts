@@ -46,7 +46,7 @@ export class TripDataService {
         return this.http
             .put(this.tripUrl + formData.code, formData)
             .toPromise()
-            .then(response => response.json() as Trip[])    // take this out if using httpclient
+            .then(response => response.json() as Trip)    // take this out if using httpclient
             .catch(this.handleError);
     }
 
