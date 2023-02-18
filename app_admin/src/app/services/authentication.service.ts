@@ -50,6 +50,7 @@ export class AuthenticationService {
         if (this.isLoggedIn()) {
             const token: string = this.getToken();
             const { email, name } = JSON.parse(atob(token.split('.')[1]));
+            console.log(token);
             return { email, name } as User;
         }
     }

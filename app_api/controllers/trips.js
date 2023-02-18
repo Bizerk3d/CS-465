@@ -45,9 +45,9 @@ const tripsFindByCode = async (req, res) => {
 };
 
 const getUser = (req, res, callback) => {
-    if (req.payload && req.payload.email) {
+    if (req.auth && req.auth.email) {
         User
-            .findOne({ email: req.payload.email })
+            .findOne({ email: req.auth.email })
             .exec((err, user) => {
                 if (!user) {
                     return res
@@ -98,7 +98,6 @@ const tripsAddTrip = async (req, res) => {
 }
 
 const tripsUpdateTrip = async (req, res) => {
-    console.log(req.body);
     getUser(req, res,
         (req, res) => {
     Trip
@@ -138,6 +137,8 @@ const tripsUpdateTrip = async (req, res) => {
 }
 
 const tripsDeleteTrip = async (req, res) => {
+    getUser(req, res,
+        (req, res) => {
     Trip
         .findOneAndDelete({ 'code': req.params.tripCode })
         .exec((err, trip) => {
@@ -155,7 +156,7 @@ const tripsDeleteTrip = async (req, res) => {
                     .json(trip);
             }
         });
-}
+})}
 
 module.exports = {
     tripsList,
