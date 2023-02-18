@@ -2,8 +2,7 @@
 
 ## **_Architecture_**
 
-### Compare and contrast the types of frontend development you used in your full stack project, including Express HTML, JavaScript, and the single-page application (SPA).
-Why did the backend use a NoSQL MongoDB database?
+### Compare and contrast the types of frontend development you used in your full stack project, including Express HTML, JavaScript, and the single-page application (SPA). Why did the backend use a NoSQL MongoDB database?
 
 We started with developing Express HTML code for our site, which involved using some JavaScript, which obviously was a natural choice for this full-stack project since it can be used for front and backend.  This site is more of a traditional multi-page application, whereas later we started working with Angular to create the SPA portion, which was the Admin site.  This portion was quite different, since it consisted of generating components and then working with those components to create the design.  It was really helpful to experience both parts so that I could see differences in performance, directories, how they were routed, and more.
 
@@ -11,8 +10,7 @@ MongoDB was a perfect fit for this application since we didn't need normalized d
 
 ## **_Functionality_**
 
-### How is JSON different from Javascript and how does JSON tie together the frontend and backend development pieces?
-Provide instances in the full stack process when you refactored code to improve functionality and efficiencies, and name the benefits that come from reusable user interface (UI) components.
+### How is JSON different from Javascript and how does JSON tie together the frontend and backend development pieces?  Provide instances in the full stack process when you refactored code to improve functionality and efficiencies, and name the benefits that come from reusable user interface (UI) components.
 
 JSON is a syntax for serializing objects, arrays, numbers, strings, booleans, and null. It is based upon JavaScript syntax, but is distinct from JavaScript: most of JavaScript is not JSON.  It does, howevever, make it very easy for JavaScript to take data and turn it into objects, which facilitates use on both front and backend.  We can store the object on the backend as JSON data and then the front-end can grab it and use it as needed for different purposes - such as displaying all trips as our listing page, or then returning only one trip's information in a form when editing said trip. 
 
