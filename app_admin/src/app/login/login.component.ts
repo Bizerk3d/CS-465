@@ -10,9 +10,13 @@ import { User } from '../models/user';
 })
 
 export class LoginComponent implements OnInit {
+<<<<<<< HEAD
     
     public formError: string = '';
     
+=======
+    public formError: string = '';
+>>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5
     public credentials = {
         name: '',
         email: '',
@@ -20,12 +24,20 @@ export class LoginComponent implements OnInit {
     };
 
     constructor(
+<<<<<<< HEAD
         private router: Router,
         private authenticationService: AuthenticationService
     ) { }
 
     ngOnInit() {}
 
+=======
+    private router: Router,
+    private authenticationService: AuthenticationService
+    ) { }
+
+    ngOnInit() {}
+>>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5
     public onLoginSubmit(): void {
         this.formError = '';
         if (!this.credentials.email || !this.credentials.password) {
@@ -41,3 +53,7 @@ export class LoginComponent implements OnInit {
             .catch((message) => this.formError = message);
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5

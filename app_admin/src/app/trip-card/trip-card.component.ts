@@ -8,6 +8,7 @@ import { AuthenticationService } from '../services/authentication.service';
     templateUrl: './trip-card.component.html',
     styleUrls: ['./trip-card.component.css']
 })
+
 export class TripCardComponent implements OnInit {
 
     @Input('trip') trip: Trip;
@@ -17,8 +18,12 @@ export class TripCardComponent implements OnInit {
         private authenticationService: AuthenticationService
     ) { }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5
     public isLoggedIn(): boolean {
         return this.authenticationService.isLoggedIn();
     }
@@ -28,5 +33,12 @@ export class TripCardComponent implements OnInit {
         localStorage.removeItem("tripCode");
         localStorage.setItem("tripCode", trip.code);
         this.router.navigate(['edit-trip']);
+    }
+
+    private deleteTrip(trip: Trip): void {
+        console.log('Inside TripListingComponent#deleteTrip');
+        localStorage.removeItem("tripCode");
+        localStorage.setItem("tripCode", trip.code);
+        this.router.navigate(['delete-trip']);
     }
 }

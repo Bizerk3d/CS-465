@@ -31,7 +31,6 @@ export class EditTripComponent implements OnInit {
         console.log('EditTripComponent#onInit found tripCode ' + tripCode);
 
         // initialize form
-
         this.editForm = this.formBuilder.group({
             _id: [],
             code: [tripCode, Validators.required],

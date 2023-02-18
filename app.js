@@ -37,7 +37,7 @@ hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
@@ -67,6 +67,15 @@ app.use((err, req, res, next) => {
       .status(401)
       .json({ "message": err.name + ": " + err.message });
   }
+});
+
+app.use((err, req, res, next) => {
+    if (err.name === 'UnauthorizedError') {
+        res
+          .status(401)
+          .json({"message": err.name + ": " + err.message});
+          
+    }
 });
 
 // catch 404 and forward to error handler
