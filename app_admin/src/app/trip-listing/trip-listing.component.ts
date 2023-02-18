@@ -18,13 +18,8 @@ export class TripListingComponent implements OnInit {
 
     constructor(
         private tripDataService: TripDataService,
-<<<<<<< HEAD
-        private authService: AuthenticationService,
-        private router: Router
-=======
         private router: Router,
         private authenticationService: AuthenticationService
->>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5
         ) { }
 
     private addTrip(): void {
@@ -44,11 +39,7 @@ export class TripListingComponent implements OnInit {
     }
 
     public isLoggedIn(): boolean {
-<<<<<<< HEAD
-        return this.authService.isLoggedIn();
-=======
         return this.authenticationService.isLoggedIn();
->>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5
     }
 
     ngOnInit(): void {

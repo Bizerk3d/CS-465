@@ -8,13 +8,8 @@ import { TripDataService } from '../services/trip-data.service';
     providedIn: 'root'
 })
 export class AuthenticationService {
-<<<<<<< HEAD
-
-    constructor(
-=======
     constructor(
 
->>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5
         @Inject(BROWSER_STORAGE) private storage: Storage,
         private tripDataService: TripDataService
     ) { }
@@ -55,10 +50,6 @@ export class AuthenticationService {
         if (this.isLoggedIn()) {
             const token: string = this.getToken();
             const { email, name } = JSON.parse(atob(token.split('.')[1]));
-<<<<<<< HEAD
-=======
-            console.log(token);
->>>>>>> 2652cef428af23f2d3ac793f9cc335b582b8fac5
             return { email, name } as User;
         }
     }
